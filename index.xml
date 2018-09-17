@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kuniaki Shimizu</title>
+    <link>https://kun432.github.io/</link>
+    <description>Recent content on Kuniaki Shimizu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Mon, 17 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kun432.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alexaスキル「HTTPステータス検索」</title>
+      <link>https://kun432.github.io/works/alexa-skill-http-status-search/</link>
+      <pubDate>Mon, 17 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kun432.github.io/works/alexa-skill-http-status-search/</guid>
+      <description> はじめに Alexaスキル「HTTPステータス検索」のページです。
+使い方    「アレクサ、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。 「アレクサ、HTTPステータス検索を開いて200を教えて」と一気に指定することもできます。 スキルを利用するには、 Amazonのスキルページ か Alexaダッシュボード から有効にして下さい。
+今後の予定  Echo Spot対応 Clova/Google Home対応  更新履歴  v1.0 (2018/9/13)  公開   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+2018年9月13日 制定
+Kuniaki Shimizu
+kun432.8d1w@gmail.com
+ </description>
+    </item>
+    
+    <item>
+      <title>Vitae</title>
+      <link>https://kun432.github.io/vitae/</link>
+      <pubDate>Sat, 28 Jul 2018 01:52:59 -0500</pubDate>
+      
+      <guid>https://kun432.github.io/vitae/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://kun432.github.io/projects/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://kun432.github.io/projects/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

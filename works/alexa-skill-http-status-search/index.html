@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kuniaki Shimizu" />
+    <meta name="description" content="Kuniaki Shimizu&#39;s Portfolio">
+    <link rel="shortcut icon" type="image/x-icon" href="https://kun432.github.io/img/favicon.ico">
+    <title>Alexaスキル「HTTPステータス検索」</title>
+    <meta name="generator" content="Hugo 0.48" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://kun432.github.io/css/vitae-skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="https://kun432.github.io/css/vitae-layout.css" />
+    <link rel="stylesheet" type="text/css" href="https://kun432.github.io/css/sustain-main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-113389308-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://kun432.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="https://kun432.hatenablog.com/">BLOG</a></li>
+        
+        <li><a href="/works/">WORKS</a></li>
+        
+        <li><a href="/vitae/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kun432.github.io/works/alexa-skill-http-status-search/">Alexaスキル「HTTPステータス検索」</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          September 17, 2018
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<h3 id="はじめに"><strong>はじめに</strong></h3>
+
+<p>Alexaスキル「HTTPステータス検索」のページです。</p>
+
+<p><img src="/img/717OwWXjBKL._SL210_QL95_BG0,0,0,0_FMpng_.png"></p>
+
+<h3 id="使い方"><strong>使い方</strong></h3>
+
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/pkgNYGQvqj4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<br />
+「アレクサ、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。
+「アレクサ、HTTPステータス検索を開いて200を教えて」と一気に指定することもできます。
+<br />
+<br />
+スキルを利用するには、 Amazonの<a href="https://www.amazon.co.jp/kun432-HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E6%A4%9C%E7%B4%A2/dp/B07H96LR81/ref=sr_1_1?ie=UTF8&amp;qid=1537198530&amp;sr=8-1&amp;keywords=http+%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9">スキルページ</a> か <a href="https://alexa.amazon.co.jp/spa/index.html#skills/dp/B07H96LR81/?ref=skill_dsk_skb_sr_0&amp;qid=1537203503">Alexaダッシュボード</a> から有効にして下さい。</p>
+
+<h3 id="今後の予定"><strong>今後の予定</strong></h3>
+
+<ul>
+<li>Echo Spot対応</li>
+<li>Clova/Google Home対応</li>
+</ul>
+
+<h3 id="更新履歴"><strong>更新履歴</strong></h3>
+
+<ul>
+<li>v1.0 (2018/9/13)
+
+<ul>
+<li>公開</li>
+</ul></li>
+</ul>
+
+<h3 id="プライバシーポリシー"><strong>プライバシーポリシー</strong></h3>
+
+<p>このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。</p>
+
+<div style="text-align: right;">
+2018年9月13日 制定<br />
+Kuniaki Shimizu<br />
+kun432.8d1w@gmail.com<br />
+</div>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kun432-github';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="https://github.com/anirbanmu/hugo-sustain-vitae">sustain-vitae</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://kun432.github.io/js/docs.min.js"></script>
+<script src="https://kun432.github.io/js/main.js"></script>
+
+<script src="https://kun432.github.io/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  </body>
+</html>
