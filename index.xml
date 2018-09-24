@@ -6,10 +6,27 @@
     <description>Recent content on Kuniaki Shimizu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 17 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kun432.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clovaスキル「HTTPステータス検索」</title>
+      <link>https://kun432.github.io/works/clova-skill-http-status-search/</link>
+      <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kun432.github.io/works/clova-skill-http-status-search/</guid>
+      <description> はじめに Clovaアプリ「HTTPステータス検索」のページです。(※2018/9/24現在、申請中です)
+目次  はじめに 目次 使い方 実装について 更新履歴 プライバシーポリシー  使い方    「ねぇClova、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。 スキルを利用するには、 Clovaアプリから有効にしてください。
+実装について CEKのExtension Serverは、公式のハンズオン等ではHerokuが使用されていますが、
+ HerokuのDynoは一定期間アクセスがなければ停止する。再アクセスすれば起動するが、起き上がるのに時間がかかる。 一般的には外から定期的に叩くことで回避するようだが、アクセスがそれほどないのにずっと起動している必要性もなければ、そのためにわざわざ別の機構を用意するのはナンセンス。 必要なときだけ、瞬時に上がるLambdaがベター。 ただし、CEKから直接Lambdaは叩けないので、API Gatewayを経由。  ということで、AWS API GatewayとAWS Lambdaを使用しています。 また、LambdaのエイリアスとAPI Gatewayのステージを使ったバージョン管理にも対応しています。Code Pipelineを使うともっと楽に管理できるようなので、次回への課題とします。 コードは、CEK SDK for Node.jsを使用しています。AlexaとClovaで日本語の認識に差があったり、スロットのエラー処理がやや異なる、などの差異があったもの、比較的ライトに対応でき、Alexaスキル「HTTPステータスコード」から流用できた部分が多かったこと、ClovaにおけるLambda実装例も揃ってきたこともあり、全体的には短期間で実装できました。 コードはGithubで公開予定です。 https://github.com/kun432/clova-skill-http-status-code
+更新履歴  v1.0(2018/9/24)  ※申請中   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+2018月9月24日 制定
+Kuniaki Shimizu
+kun432.8d1w@gmail.com
+ </description>
+    </item>
     
     <item>
       <title>Alexaスキル「HTTPステータス検索」</title>
@@ -18,8 +35,11 @@
       
       <guid>https://kun432.github.io/works/alexa-skill-http-status-search/</guid>
       <description> はじめに Alexaスキル「HTTPステータス検索」のページです。
-使い方    「アレクサ、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。 「アレクサ、HTTPステータス検索を開いて200を教えて」と一気に指定することもできます。 スキルを利用するには、 Amazonのスキルページ か Alexaダッシュボード から有効にして下さい。
-今後の予定  Echo Spot対応 Clova/Google Home対応  更新履歴  v1.0 (2018/9/13)  公開   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+目次  はじめに 目次 使い方 実装について 今後の予定 更新履歴 プライバシーポリシー  使い方    「アレクサ、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。 「アレクサ、HTTPステータス検索を開いて200を教えて」と一気に指定することもできます。 スキルを利用するには、 Amazonのスキルページ か Alexaダッシュボード から有効にして下さい。
+実装について 初のAlexaスキルということで、まずはシンプルに「辞書的」なスキルを作ってみました。「任意のキーワードからデータを引っ張ってくる」というのは、Alexaにおけるデータの流れを理解しやすく、かつ、汎用性が高い（データを置き換えるだけでいろいろ応用が効く）パターンだと思うので、最初のテーマとしてはとても良かったと思います。 コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。シンプルなスキルですが、以下のような工夫も入れてます。
+ ちょうどv2が発表された後で情報もあまりなかったのですが、今後v1→v2になっていくことを考えて、情報収集しつつ実装してみました。 各HTTPステータスコードの説明は、Wikipediaの&amp;rdquo;HTTPステータスコード&amp;rdquo;の説明を元に発話を作っていますが、発話に英語文字列が含まれている（例：101 Switching Protocols）場合、Alexaの読み上げで正しく発音してくれるものとそうでないものがあったりします。そのため、意図的にレスポンスに渡す文字列に含まれる英語文字列をカタカナ英語にするなどの調整をしています。 上記に関連して、スマートフォンのAlexaアプリには「カード」機能があり、スキルからのレスポンスを文字列で表示してくれます。一般的な実装では、発話も表示も同じテキストを渡すことが多いようですが、カードに渡す文字列はSSMLを認識せずそのまま表示されるため、発話を調整している場合は発話と表示を分けて管理する必要があります。本スキルではSSMLを使っていないものの、カタカナ表記がそのまま表示されるため、これに対応しています。 結論としては、発話と表示は分けて管理する、発話の調整はSSMLを使う、というのがよいということですね。Echo Spotのようなディスプレイ付モデルも出てきたため、今後のノウハウとしたいと思います。  バックエンドも、シンプルにAlexaの一般的かつミニマムな構成としてLambdaのみです。サーバーレスはこれまで使ったことが全くなかったのですが、必要な時だけ瞬時にあがる効率性はスマートスピーカーのユースケースにぴったりですね。Lambdaのバージョン管理や自動化というところは改善の余地がありますので、今後の課題とします。 コードはGithubで公開しています。 https://github.com/kun432/clova-skill-http-status-code
+今後の予定  Echo Spot対応 Clova/Google Home対応  ※Clova版はこちら
+更新履歴  v1.0 (2018/9/13)  公開   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
 2018年9月13日 制定
 Kuniaki Shimizu
 kun432.8d1w@gmail.com
