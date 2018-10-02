@@ -7,7 +7,7 @@
     <meta name="author" content="Kuniaki Shimizu" />
     <meta name="description" content="Kuniaki Shimizu&#39;s Portfolio">
     <link rel="shortcut icon" type="image/x-icon" href="https://kun432.github.io/img/favicon.ico">
-    <title>Alexaスキル「HTTPステータス検索」</title>
+    <title>Googleアクション「HTTPステータス検索」</title>
     <meta name="generator" content="Hugo 0.49" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -73,12 +73,12 @@ if (!doNotTrack) {
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://kun432.github.io/works/alexa-skill-http-status-search/">Alexaスキル「HTTPステータス検索」</a></strong>
+            <strong><a href="https://kun432.github.io/works/google-action-http-status-search/">Googleアクション「HTTPステータス検索」</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          September 17, 2018
+          October 2, 2018
             &nbsp;&nbsp;
             
           </h4>
@@ -90,9 +90,9 @@ if (!doNotTrack) {
 
 <h3 id="はじめに"><strong>はじめに</strong></h3>
 
-<p>Alexaスキル「HTTPステータス検索」のページです。</p>
+<p>Actions on Googleアプリ「HTTPステータス検索」のページです。<code>(※2018/10/2現在、申請準備中です)</code></p>
 
-<p><img src="/img/icon-alexa-skill-http-status-code.png" width=250 /></p>
+<p><img src="/img/google-action-http-status-logo.png" width=600></p>
 
 <h3 id="目次"><strong>目次</strong></h3>
 
@@ -103,7 +103,6 @@ if (!doNotTrack) {
 <li><a href="#目次"><strong>目次</strong></a></li>
 <li><a href="#使い方"><strong>使い方</strong></a></li>
 <li><a href="#実装について"><strong>実装について</strong></a></li>
-<li><a href="#今後の予定"><strong>今後の予定</strong></a></li>
 <li><a href="#更新履歴"><strong>更新履歴</strong></a></li>
 <li><a href="#プライバシーポリシー"><strong>プライバシーポリシー</strong></a></li>
 </ul>
@@ -114,55 +113,48 @@ if (!doNotTrack) {
 
 <p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/pkgNYGQvqj4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/HFQdbAHYXCI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 <br />
-「アレクサ、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。
-「アレクサ、HTTPステータス検索を開いて200を教えて」と一気に指定することもできます。
+「OK, Google、HTTPステータス検索につないで」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。
 <br />
 <br />
-スキルを利用するには、 Amazonの<a href="https://www.amazon.co.jp/kun432-HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E6%A4%9C%E7%B4%A2/dp/B07H96LR81/ref=sr_1_1?ie=UTF8&amp;qid=1537198530&amp;sr=8-1&amp;keywords=http+%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9">スキルページ</a> か <a href="https://alexa.amazon.co.jp/spa/index.html#skills/dp/B07H96LR81/?ref=skill_dsk_skb_sr_0&amp;qid=1537203503">Alexaダッシュボード</a> から有効にして下さい。</p>
+アクションの利用開始に、有効化等の作業は不要です。ぜひご利用ください。</p>
 
 <h3 id="実装について"><strong>実装について</strong></h3>
 
-<p><img src="/img/design-alexa-skill-http-status-code.png" width=740 border=1 /></p>
+<p><img src="/img/design-google-action-http-status-code.png" width=740 style="border: solid 1px #000000" /></p>
 
-<p>初のAlexaスキルということで、まずはシンプルに「辞書的」なスキルを作ってみました。「任意のキーワードからデータを引っ張ってくる」というのは、Alexaにおけるデータの流れを理解しやすく、かつ、汎用性が高い（データを置き換えるだけでいろいろ応用が効く）パターンだと思うので、最初のテーマとしてはとても良かったと思います。
-<br />
-<br />
-コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。シンプルなスキルですが、以下のような工夫も入れてます。</p>
+<p>Alexa、Clovaに続いて、Google Home向けのアクションとして対応しました。基本的なロジックやVUI設計の考え方はそれほど変わりませんので、短期間で実装できましたが、以下のようなGoogle Home向けに特化した修正も行っています。</p>
 
 <ul>
-<li>ちょうどv2が発表された後で情報もあまりなかったのですが、今後v1→v2になっていくことを考えて、情報収集しつつ実装してみました。</li>
-<li>各HTTPステータスコードの説明は、<a href="https://ja.wikipedia.org/wiki/HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">Wikipediaの&rdquo;HTTPステータスコード&rdquo;</a>の説明を元に発話を作っていますが、発話に英語文字列が含まれている（例：101 Switching Protocols）場合、Alexaの読み上げで正しく発音してくれるものとそうでないものがあったりします。そのため、意図的にレスポンスに渡す文字列に含まれる英語文字列をカタカナ英語にするなどの調整をしています。</li>
-<li>上記に関連して、スマートフォンのAlexaアプリには「カード」機能があり、スキルからのレスポンスを文字列で表示してくれます。一般的な実装では、発話も表示も同じテキストを渡すことが多いようですが、カードに渡す文字列はSSMLを認識せずそのまま表示されるため、発話を調整している場合は発話と表示を分けて管理する必要があります。本スキルではSSMLを使っていないものの、カタカナ表記がそのまま表示されるため、これに対応しています。</li>
-<li>結論としては、発話と表示は分けて管理する、発話の調整はSSMLを使う、というのがよいということですね。Echo Spotのようなディスプレイ付モデルも出てきたため、今後のノウハウとしたいと思います。</li>
+<li>インテントで受け取ったパラメータはWebhookでFirebase Functionsに渡していますが、Firebase Functions側で障害が発生した場合、Dialogflow側でテキストレスポンスを設定することで、利用者への障害通知を明確に伝えるようにしています。</li>
+<li>SimpleResponseを使って、音声出力と画面出力を分けています。</li>
+<li>また、画面出力が可能なデバイス向けに、サジェスチョンチップを表示し、会話のフォローを行えるようにしています。</li>
 </ul>
 
-<p>バックエンドも、シンプルにAlexaの一般的かつミニマムな構成としてLambdaのみです。サーバーレスはこれまで使ったことが全くなかったのですが、必要な時だけ瞬時にあがる効率性はスマートスピーカーのユースケースにぴったりですね。Lambdaのバージョン管理や自動化というところは改善の余地がありますので、今後の課題とします。
+<p>また、これまでのAlexa, Clovaスキル開発時の経験を生かして以下のような改善も行っています・</p>
+
+<ul>
+<li>発話サンプル（Dialogflowでは、&rdquo;Training phrases&rdquo;）をエンティティに分解し、発話サンプルの登録数を減らしました。例えば、「ステータスコードXXXを調べて」「ステータスコードXXXを教えて」みたいな微妙な違いに関して、同士部分をエンティティ化することで、対応がやりやすくなります。</li>
+<li>可能な限り、Dialogflow側だけで処理が完結できるようにして、どうしてもできない場合（受け取ったパラメータを処理する必要がある）にだけWebhookに渡すようにしました。これによりFirebase Functions側のコードは大幅にスッキリしました。</li>
+</ul>
+
+<p>これで３大スマートスピーカー向けアプリ開発を一通り経験できましたので、今後はそれぞれのスピーカーおよびクラウドの特性を活かした機能の活用を進めていきたいと考えています。
 <br />
 <br />
 コードはGithubで公開予定です。
 <br />
-<a href="https://github.com/kun432/alexa-skill-http-status-code">https://github.com/kun432/alexa-skill-http-status-code</a></p>
-
-<h3 id="今後の予定"><strong>今後の予定</strong></h3>
-
-<ul>
-<li>Echo Spot対応</li>
-<li><del>Clova/</del>Google Home対応</li>
-</ul>
-
-<p>※Clova版は<a href="/works/clova-skill-http-status-search">こちら</a></p>
+<a href="https://github.com/kun432/google-action-http-status-code">https://github.com/kun432/google-action-http-status-code</a></p>
 
 <h3 id="更新履歴"><strong>更新履歴</strong></h3>
 
 <ul>
-<li>v1.0 (2018/9/13)
+<li>v1.0(2018/10/2)
 
 <ul>
-<li>公開</li>
+<li>申請準備中</li>
 </ul></li>
 </ul>
 
@@ -171,7 +163,7 @@ if (!doNotTrack) {
 <p>このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。</p>
 
 <div style="text-align: right;">
-2018年9月13日 制定<br />
+2018月10月2日 制定<br />
 Kuniaki Shimizu<br />
 kun432.8d1w@gmail.com<br />
 </div>

@@ -6,10 +6,28 @@
     <description>Recent content in Works on Kuniaki Shimizu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 24 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kun432.github.io/works/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Googleアクション「HTTPステータス検索」</title>
+      <link>https://kun432.github.io/works/google-action-http-status-search/</link>
+      <pubDate>Tue, 02 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kun432.github.io/works/google-action-http-status-search/</guid>
+      <description> はじめに Actions on Googleアプリ「HTTPステータス検索」のページです。(※2018/10/2現在、申請準備中です)
+目次  はじめに 目次 使い方 実装について 更新履歴 プライバシーポリシー  使い方    「OK, Google、HTTPステータス検索につないで」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。 アクションの利用開始に、有効化等の作業は不要です。ぜひご利用ください。
+実装について Alexa、Clovaに続いて、Google Home向けのアクションとして対応しました。基本的なロジックやVUI設計の考え方はそれほど変わりませんので、短期間で実装できましたが、以下のようなGoogle Home向けに特化した修正も行っています。
+ インテントで受け取ったパラメータはWebhookでFirebase Functionsに渡していますが、Firebase Functions側で障害が発生した場合、Dialogflow側でテキストレスポンスを設定することで、利用者への障害通知を明確に伝えるようにしています。 SimpleResponseを使って、音声出力と画面出力を分けています。 また、画面出力が可能なデバイス向けに、サジェスチョンチップを表示し、会話のフォローを行えるようにしています。  また、これまでのAlexa, Clovaスキル開発時の経験を生かして以下のような改善も行っています・
+ 発話サンプル（Dialogflowでは、&amp;rdquo;Training phrases&amp;rdquo;）をエンティティに分解し、発話サンプルの登録数を減らしました。例えば、「ステータスコードXXXを調べて」「ステータスコードXXXを教えて」みたいな微妙な違いに関して、同士部分をエンティティ化することで、対応がやりやすくなります。 可能な限り、Dialogflow側だけで処理が完結できるようにして、どうしてもできない場合（受け取ったパラメータを処理する必要がある）にだけWebhookに渡すようにしました。これによりFirebase Functions側のコードは大幅にスッキリしました。  これで３大スマートスピーカー向けアプリ開発を一通り経験できましたので、今後はそれぞれのスピーカーおよびクラウドの特性を活かした機能の活用を進めていきたいと考えています。 コードはGithubで公開予定です。 https://github.com/kun432/google-action-http-status-code
+更新履歴  v1.0(2018/10/2)  申請準備中   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+2018月10月2日 制定
+Kuniaki Shimizu
+kun432.8d1w@gmail.com
+ </description>
+    </item>
     
     <item>
       <title>Clovaスキル「HTTPステータス検索」</title>
