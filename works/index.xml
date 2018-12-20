@@ -6,10 +6,44 @@
     <description>Recent content in Works on Kuniaki Shimizu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Tue, 02 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kun432.github.io/works/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Alexaスキル「忠臣蔵こよみ」</title>
+      <link>https://kun432.github.io/works/alexa-skill-chushingura-koyomi/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kun432.github.io/works/alexa-skill-chushingura-koyomi/</guid>
+      <description> はじめに Alexaスキル「忠臣蔵こよみ」のページです。
+目次 autoauto- はじめにauto- 目次auto- 使い方auto- 実装についてauto- 今後の予定auto- 更新履歴auto- プライバシーポリシーautoauto使い方    「アレクサ、忠臣蔵こよみを開いて」で起動して、その後、「知りたい」と答えると、忠臣蔵の討ち入り日である12月15日までの日数を数えてくれます。 実装について 今回のポイントは2点です。
+ Echo Spotのような画面付きデバイス向けにDisplay Templateを使用し画像表示を行っています。また、画面付きデバイスの場合は、音声だけではなく、リストメニューを使ったタップによる入力も可能なので、これも実装してみました。 Alexaの声は、標準では女性の声なのですが、テーマに合わせて男性の声を使いたい、ということで、Amazon Pollyを使ってみました。SSMLだけで実装できるので非常に簡単です。あと、思いのほか、武士言葉でも普通に喋ってくれてびっくりしました（笑）  元々の音声のみのインタラクションは、これまでのGUIとは考え方が異なる難しさがありましたが、画面表示ができることにより視覚的に補完できる反面はあるものの、考慮すべきことも多くなり、違う意味での難しさもあるなと感じました。特に、
+ シミュレータと実機で動きが違ったり、Echo Showの実機がなかったり、でテストが難しい。 画面付きの場合、セッションを明示的に切る必要があるが、挙動にばらつきがある。 複数のテンプレートが用意されており、かつ、同じテンプレートでもSpot/Showで見え方や画像処理が違う。  あたりはまだ手探り感があり、引き続きいろいろ試していく必要があると思っています。Echo Showも発売され、Fire TVもAlexa対応、さらにマルチモーダルな画面設計が行えるAPLなど、画面対応については非常に可能性があると思ってます。
+あと、このスキル、討ち入り当日の12/15は時間ごとに討ち入りの模様が効果音付きで説明されます。今回最も苦労したのは、それを作るために、忠臣蔵の正確な時間推移を追うために書籍漁ったり、良さげで効果音を探すことだったり、します（笑） コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。バックエンドも定番の構成です。 コードはGithubで公開予定です。 https://github.com/kun432/alexa-skill-chushingura-koyomi
+今後の予定  Clova/Google Home対応  更新履歴  v1.0 (2018/11/13)  公開   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+2018年11月11日 制定
+Kuniaki Shimizu
+kun432.8d1w@gmail.com
+ </description>
+    </item>
+    
+    <item>
+      <title>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</title>
+      <link>https://kun432.github.io/works/alexa-skill-koyomi-series/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kun432.github.io/works/alexa-skill-koyomi-series/</guid>
+      <description> はじめに Alexaスキル「関ヶ原こよみ」「本能寺こよみ」のページです。
+目次  はじめに 目次 使い方 実装について 今後の予定 更新履歴 プライバシーポリシー  使い方 「アレクサ、〇〇こよみを開いて」で起動して、その後、「知りたい」と答えると、それぞれの出来事が起こった当日までの日数を数えてくれます。 実装について Alexaスキル開発キャンペーンに応募するために「忠臣蔵こよみ」を横展開しただけです。テーマを変えるだけでほぼ実装はいじっていません（多少当日の時間推移はいじっていますが）ので、これもまた、それぞれの歴史の書籍読んだり調べたりというのが工数の殆どを締めていたりします（笑） あと「忠臣蔵こよみ」でもそうなのですが、効果音いろいろと使っています。Amazonからも公式にAlexaサウンドライブラリが用意されており、SSMLで指定するだけで簡単に使えて、かつ、華やかになりますね。効果音はおすすめです。 コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。バックエンドも定番の構成です。コードはGithubで公開予定です。 https://github.com/kun432/alexa-skill-sekigahara-koyomi
+https://github.com/kun432/alexa-skill-honnouji-koyomi
+今後の予定  Clova/Google Home対応  更新履歴  関ヶ原こよみ v1.0 (2018/11/26)  公開  本能寺こよみ v1.0 (2018/11/26)  公開   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+2018年11月26日 制定
+Kuniaki Shimizu
+kun432.8d1w@gmail.com
+ </description>
+    </item>
     
     <item>
       <title>Googleアクション「HTTPステータス検索」</title>

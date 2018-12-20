@@ -7,7 +7,7 @@
     <meta name="author" content="Kuniaki Shimizu" />
     <meta name="description" content="Kuniaki Shimizu&#39;s Portfolio">
     <link rel="shortcut icon" type="image/x-icon" href="https://kun432.github.io/img/favicon.ico">
-    <title>Clovaスキル「HTTPステータス検索」</title>
+    <title>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</title>
     <meta name="generator" content="Hugo 0.50" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -73,12 +73,12 @@ if (!doNotTrack) {
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://kun432.github.io/works/clova-skill-http-status-search/">Clovaスキル「HTTPステータス検索」</a></strong>
+            <strong><a href="https://kun432.github.io/works/alexa-skill-koyomi-series/">Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          September 24, 2018
+          December 20, 2018
             &nbsp;&nbsp;
             
           </h4>
@@ -90,9 +90,9 @@ if (!doNotTrack) {
 
 <h3 id="はじめに"><strong>はじめに</strong></h3>
 
-<p>Clovaスキル「HTTPステータス検索」のページです。</p>
+<p>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」のページです。</p>
 
-<p><img src="/img/icon-clova-skill-http-status-code.jpg" width=250 /></p>
+<p><img src="/img/alexa-skill-sekigahara-koyomi.png" width=250 /><img src="/img/alexa-skill-honnouji-koyomi.png" width=250 /></p>
 
 <h3 id="目次"><strong>目次</strong></h3>
 
@@ -103,6 +103,7 @@ if (!doNotTrack) {
 <li><a href="#目次"><strong>目次</strong></a></li>
 <li><a href="#使い方"><strong>使い方</strong></a></li>
 <li><a href="#実装について"><strong>実装について</strong></a></li>
+<li><a href="#今後の予定"><strong>今後の予定</strong></a></li>
 <li><a href="#更新履歴"><strong>更新履歴</strong></a></li>
 <li><a href="#プライバシーポリシー"><strong>プライバシーポリシー</strong></a></li>
 </ul>
@@ -111,43 +112,39 @@ if (!doNotTrack) {
 
 <h3 id="使い方"><strong>使い方</strong></h3>
 
-<p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/34GxyOC8Td4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<br />
-「ねぇClova、HTTPステータス検索を開いて」で起動し、その後、「ステータスコード200を教えて」というと、ステータスコードの意味を教えてくれます。
+<p>「アレクサ、〇〇こよみを開いて」で起動して、その後、「知りたい」と答えると、それぞれの出来事が起こった当日までの日数を数えてくれます。
 <br />
 <br />
-スキルを利用するには、 Clovaアプリから有効にしてください。</p>
+<!-- スキルを利用するには、 Amazonの[スキルページ](https://www.amazon.co.jp/kun432-関ヶ原こよみ/dp/B07KW3C182) か [Alexaダッシュボード]( https://alexa.amazon.co.jp/spa/index.html#skills/dp/B07H96LR81/?ref=skill_dsk_skb_sr_0&qid=1537203503) から有効にして下さい。 --></p>
 
 <h3 id="実装について"><strong>実装について</strong></h3>
 
-<p><img src="/img/design-clova-skill-http-status-code.png" width=740 style="border: solid 1px #000000" /></p>
+<p><img src="/img/design-alexa-skill-http-status-code.png" width=740 border=1 /></p>
 
-<p>CEKのExtension Serverは、公式のハンズオン等ではHerokuが使用されていますが、</p>
+<p>Alexaスキル開発キャンペーンに応募するために「忠臣蔵こよみ」を横展開しただけです。テーマを変えるだけでほぼ実装はいじっていません（多少当日の時間推移はいじっていますが）ので、これもまた、それぞれの歴史の書籍読んだり調べたりというのが工数の殆どを締めていたりします（笑）
+あと「忠臣蔵こよみ」でもそうなのですが、効果音いろいろと使っています。Amazonからも公式にAlexaサウンドライブラリが用意されており、SSMLで指定するだけで簡単に使えて、かつ、華やかになりますね。効果音はおすすめです。
+<br />
+<br />
+コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。バックエンドも定番の構成です。コードはGithubで公開予定です。
+<br />
+<a href="https://github.com/kun432/alexa-skill-sekigahara-koyomi">https://github.com/kun432/alexa-skill-sekigahara-koyomi</a><br />
+<a href="https://github.com/kun432/alexa-skill-honnouji-koyomi">https://github.com/kun432/alexa-skill-honnouji-koyomi</a></p>
+
+<h3 id="今後の予定"><strong>今後の予定</strong></h3>
 
 <ul>
-<li>HerokuのDynoは一定期間アクセスがなければ停止する。再アクセスすれば起動するが、起き上がるのに時間がかかる。</li>
-<li>一般的には外から定期的に叩くことで回避するようだが、アクセスがそれほどないのにずっと起動している必要性もなければ、そのためにわざわざ別の機構を用意するのはナンセンス。</li>
-<li>必要なときだけ、瞬時に上がるLambdaがベター。 ただし、CEKから直接Lambdaは叩けないので、API Gatewayを経由。</li>
+<li>Clova/Google Home対応</li>
 </ul>
-
-<p>ということで、AWS API GatewayとAWS Lambdaを使用しています。 また、LambdaのエイリアスとAPI Gatewayのステージを使ったバージョン管理にも対応しています。Code Pipelineを使うともっと楽に管理できるようなので、次回への課題とします。
-<br />
-<br />
-コードは、CEK SDK for Node.jsを使用しています。AlexaとClovaで日本語の認識に差があったり、スロットのエラー処理がやや異なる、などの差異があったもの、比較的ライトに対応でき、Alexaスキル「HTTPステータスコード」から流用できた部分が多かったこと、ClovaにおけるLambda実装例も揃ってきたこともあり、全体的には短期間で実装できました。
-<br />
-<br />
-コードはGithubで公開してます。
-<br />
-<a href="https://github.com/kun432/clova-skill-http-status-code">https://github.com/kun432/clova-skill-http-status-code</a></p>
 
 <h3 id="更新履歴"><strong>更新履歴</strong></h3>
 
 <ul>
-<li>v1.0(2018/9/25)
+<li>関ヶ原こよみ v1.0 (2018/11/26)
+
+<ul>
+<li>公開</li>
+</ul></li>
+<li>本能寺こよみ v1.0 (2018/11/26)
 
 <ul>
 <li>公開</li>
@@ -159,7 +156,7 @@ if (!doNotTrack) {
 <p>このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。</p>
 
 <div style="text-align: right;">
-2018月9月24日 制定<br />
+2018年11月26日 制定<br />
 Kuniaki Shimizu<br />
 kun432.8d1w@gmail.com<br />
 </div>
