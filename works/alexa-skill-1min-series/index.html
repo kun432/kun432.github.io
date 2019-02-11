@@ -7,7 +7,7 @@
     <meta name="author" content="Kuniaki Shimizu" />
     <meta name="description" content="Kuniaki Shimizu&#39;s Portfolio">
     <link rel="shortcut icon" type="image/x-icon" href="https://kun432.github.io/img/favicon.ico">
-    <title>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</title>
+    <title>Alexaスキル「１分間キャンドル」「１分間暖炉」「１分間サンセット（審査中）」</title>
     <meta name="generator" content="Hugo 0.53" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -75,12 +75,12 @@ if (!doNotTrack) {
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://kun432.github.io/works/alexa-skill-koyomi-series/">Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</a></strong>
+            <strong><a href="https://kun432.github.io/works/alexa-skill-1min-series/">Alexaスキル「１分間キャンドル」「１分間暖炉」「１分間サンセット（審査中）」</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          December 20, 2018
+          February 11, 2019
             &nbsp;&nbsp;
             
           </h4>
@@ -92,9 +92,12 @@ if (!doNotTrack) {
 
 <h3 id="はじめに"><strong>はじめに</strong></h3>
 
-<p>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」のページです。</p>
+<p>Alexaスキル「１分間キャンドル」「１分間暖炉」「１分間サンセット（審査中）」のページです。</p>
 
-<p><img src="/img/alexa-skill-sekigahara-koyomi.png" width=250 /><img src="/img/alexa-skill-honnouji-koyomi.png" width=250 /></p>
+<p><img src="/img/alexa-skill-1min-candle-icon.png" width=250 />
+<img src="/img/alexa-skill-1min-fireplace-icon.png" width=250 /></p>
+
+<p><img src=""></p>
 
 <h3 id="目次"><strong>目次</strong></h3>
 
@@ -106,7 +109,13 @@ if (!doNotTrack) {
 <li><a href="#使い方"><strong>使い方</strong></a></li>
 <li><a href="#実装について"><strong>実装について</strong></a></li>
 <li><a href="#今後の予定"><strong>今後の予定</strong></a></li>
-<li><a href="#更新履歴"><strong>更新履歴</strong></a></li>
+<li><a href="#更新履歴"><strong>更新履歴</strong></a>
+
+<ul>
+<li><a href="#１分間キャンドル">「１分間キャンドル」</a></li>
+<li><a href="#１分間暖炉">「１分間暖炉」</a></li>
+<li><a href="#１分間3セット">「１分間3セット」</a></li>
+</ul></li>
 <li><a href="#プライバシーポリシー"><strong>プライバシーポリシー</strong></a></li>
 </ul>
 
@@ -114,42 +123,99 @@ if (!doNotTrack) {
 
 <h3 id="使い方"><strong>使い方</strong></h3>
 
-<p>「アレクサ、〇〇こよみを開いて」で起動して、その後、「知りたい」と答えると、それぞれの出来事が起こった当日までの日数を数えてくれます。
+<p>「アレクサ、１分間◯◯を開いて」で起動した後、「再生」と答えると、ランダムで１分程度の動画を再生します。ディスプレイ付きデバイス（Echo Spot/Echo Show）でのみ利用可能です。
 <br />
-<br />
-<!-- スキルを利用するには、 Amazonの[スキルページ](https://www.amazon.co.jp/kun432-関ヶ原こよみ/dp/B07KW3C182) か [Alexaダッシュボード]( https://alexa.amazon.co.jp/spa/index.html#skills/dp/B07H96LR81/?ref=skill_dsk_skb_sr_0&qid=1537203503) から有効にして下さい。 --></p>
+<br /></p>
 
 <h3 id="実装について"><strong>実装について</strong></h3>
 
-<p><img src="/img/design-alexa-skill-http-status-code.png" width=740 border=1 /></p>
+<p>2019年のスキル開発の個人的テーマとして、以下を設定しています。</p>
 
-<p>Alexaスキル開発キャンペーンに応募するために「忠臣蔵こよみ」を横展開しただけです。テーマを変えるだけでほぼ実装はいじっていません（多少当日の時間推移はいじっていますが）ので、これもまた、それぞれの歴史の書籍読んだり調べたりというのが工数の殆どを締めていたりします（笑）
-あと「忠臣蔵こよみ」でもそうなのですが、効果音いろいろと使っています。Amazonからも公式にAlexaサウンドライブラリが用意されており、SSMLで指定するだけで簡単に使えて、かつ、華やかになりますね。効果音はおすすめです。
+<ul>
+<li>毎月、少なくとも１つのスキルをリリースする</li>
+<li>毎月、少なくとも１つの新しいテーマに取り組む
+<br /></li>
+</ul>
+
+<p>1月のテーマは当初「セッション」を考えていたのですが、良いアイデアが思いつかず、急遽「動画再生」に変更しました。音楽や動画関連のスキルは非常に数が多くかつ人気も高いので、一度やってみたいと思っていましたが、実際にやってみると非常に簡単で、急遽ではありましたがやってみてよかったなと思います。簡単に実装できてしかも使ってもらいやすい、ということで、多数リリースされているのも納得です。動画コンテンツさえあれば比較的簡単に実装できるので、コード公開してますので、ぜひ皆さんもやっていただければと思います。
 <br />
 <br />
-コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。バックエンドも定番の構成です。コードはGithubで公開予定です。
+動画ファイルについて少し補足しておきます。
 <br />
-<a href="https://github.com/kun432/alexa-skill-sekigahara-koyomi">https://github.com/kun432/alexa-skill-sekigahara-koyomi</a><br />
-<a href="https://github.com/kun432/alexa-skill-honnouji-koyomi">https://github.com/kun432/alexa-skill-honnouji-koyomi</a></p>
+動画はすべて<a href="https://pixabay.com">pixabay</a>のロイヤリティフリー動画を使用しています。pixabayでは多数の動画素材を提供しているのですが、あくまでも素材ということもあり、ほとんどが1分未満のものです。当初は30分ぐらいの動画を再生したいと思っていたのですが、長時間のものはなかなか見つからない、あってもテーマに合わない、自分で作るのも手間、ということで、1分間未満を逆手にとって「仕事中などにちょっとした息抜きを」という目的に変えました。息抜き30分とか流石に怒られるでしょうし（笑）、よい落とし所だったのではないかなと思います。代りに複数の動画をランダムに再生するようにして、なるべく飽きすに継続して使ってもらえたらと思っています。
+<br />
+<br />
+また、再生可能な動画ファイルのフォーマットは規定があるためffmpegで以下のような調整もしてます。</p>
+
+<ul>
+<li>職場等での利用を想定して無音化</li>
+<li>1分に収まるよう再生部分の切り出し</li>
+<li>4K非対応のため、動画の画面サイズの縮小</li>
+<li>ストレージ容量・転送量削減のためのビットレートダウン</li>
+</ul>
+
+<p>特に、ストレージ容量、転送量というところはコストにも帰ってくるため、「1分間」というところはこういうところでも意味があったりします。
+<br />
+<br /></p>
+
+<pre><code>実際には以降で述べるAlexa-hostedを利用しているため、ストレージ容量・転送量というところで追加コストが発生することはありませんが、逆に利用枠が決まっておりそれを超えるとスキルが使えなくなるため、このあたりのデータ量の削減は重要かなと思います。
+</code></pre>
+
+<p><br />
+<br />
+あと、今回のスキルでは、Alexa-hostedスキルで作成しました。これまでのスキル作成では、</p>
+
+<ul>
+<li>対話モデルはAlexa開発者コンソール</li>
+<li>バックエンドはAWS Lambda</li>
+<li>動画等のファイルはAWS S3</li>
+</ul>
+
+<p>と、複数のコンポーネントを使って管理画面を行ったり来たりするのが一般的だったのですが、Alexa-hosted（ただしベータ）を使うことにより、これらが全てAlexa開発者コンソールだけで完結するようになり、非常に開発がスムーズでした。大規模なスキル開発では厳しい面もあると思いますが、シンプルなものやプロトタイプ的なもの、個人での開発といったレベルだと十分ですね。今後も活用したいと思います。
+<br />
+<br />
+コードはGithubで公開してます。
+<br />
+<a href="https://github.com/kun432/alexa-skill-1min-candle">https://github.com/kun432/alexa-skill-1min-candle</a><br />
+<a href="https://github.com/kun432/alexa-skill-1min-fireplace">https://github.com/kun432/alexa-skill-1min-fireplace</a><br />
+<a href="https://github.com/kun432/alexa-skill-1min-sunset">https://github.com/kun432/alexa-skill-1min-sunset</a></p>
 
 <h3 id="今後の予定"><strong>今後の予定</strong></h3>
 
 <ul>
-<li>Clova/Google Home対応</li>
+<li>動画の再生制御については、今回は短い動画ということで単純な再生のみの実装となっていますが、実際には細かい制御が可能で、そのための標準インテントが多数用意されています。今後のバージョンアップ時にこれらに対応していきたいと思います。</li>
+<li>動画は適宜追加予定です。</li>
 </ul>
 
 <h3 id="更新履歴"><strong>更新履歴</strong></h3>
 
+<h4 id="１分間キャンドル">「１分間キャンドル」</h4>
+
 <ul>
-<li>関ヶ原こよみ v1.0 (2018/11/26)
+<li>v1.0(2019/01/30)
 
 <ul>
 <li>公開</li>
 </ul></li>
-<li>本能寺こよみ v1.0 (2018/11/26)
+</ul>
+
+<h4 id="１分間暖炉">「１分間暖炉」</h4>
+
+<ul>
+<li>v1.0(2019/01/31)
 
 <ul>
 <li>公開</li>
+</ul></li>
+</ul>
+
+<h4 id="１分間3セット">「１分間3セット」</h4>
+
+<ul>
+<li>v1.0(2019/02/12)
+
+<ul>
+<li>申請中</li>
 </ul></li>
 </ul>
 
@@ -158,7 +224,7 @@ if (!doNotTrack) {
 <p>このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。</p>
 
 <div style="text-align: right;">
-2018年11月26日 制定<br />
+2019年01月30日 制定<br />
 Kuniaki Shimizu<br />
 kun432.8d1w@gmail.com<br />
 </div>
