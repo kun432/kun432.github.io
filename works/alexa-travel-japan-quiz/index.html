@@ -7,7 +7,7 @@
     <meta name="author" content="Kuniaki Shimizu" />
     <meta name="description" content="Kuniaki Shimizu&#39;s Portfolio">
     <link rel="shortcut icon" type="image/x-icon" href="https://kun432.github.io/img/favicon.ico">
-    <title>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</title>
+    <title>Alexaスキル「Travel Japan Quiz」</title>
     <meta name="generator" content="Hugo 0.54.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -75,12 +75,12 @@ if (!doNotTrack) {
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://kun432.github.io/works/alexa-skill-koyomi-series/">Alexaスキル「関ヶ原こよみ」「本能寺こよみ」</a></strong>
+            <strong><a href="https://kun432.github.io/works/alexa-travel-japan-quiz/">Alexaスキル「Travel Japan Quiz」</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          December 20, 2018
+          February 16, 2019
             &nbsp;&nbsp;
             
           </h4>
@@ -92,9 +92,9 @@ if (!doNotTrack) {
 
 <h3 id="はじめに"><strong>はじめに</strong></h3>
 
-<p>Alexaスキル「関ヶ原こよみ」「本能寺こよみ」のページです。</p>
+<p>Alexaスキル「Travel Japan Quiz」のページです。</p>
 
-<p><img src="/img/alexa-skill-sekigahara-koyomi.png" width=250 /><img src="/img/alexa-skill-honnouji-koyomi.png" width=250 /></p>
+<p><img src="/img/alexa-skill-travel-japan-quiz.png" width=250 /></p>
 
 <h3 id="目次"><strong>目次</strong></h3>
 
@@ -114,39 +114,44 @@ if (!doNotTrack) {
 
 <h3 id="使い方"><strong>使い方</strong></h3>
 
-<p>「アレクサ、〇〇こよみを開いて」で起動して、その後、「知りたい」と答えると、それぞれの出来事が起こった当日までの日数を数えてくれます。
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/DxHhFusWlC0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 <br />
 <br />
-<!-- スキルを利用するには、 Amazonの[スキルページ](https://www.amazon.co.jp/kun432-関ヶ原こよみ/dp/B07KW3C182) か [Alexaダッシュボード]( https://alexa.amazon.co.jp/spa/index.html#skills/dp/B07H96LR81/?ref=skill_dsk_skb_sr_0&qid=1537203503) から有効にして下さい。 --></p>
+<font color="red">注意！！！ amazon.comアカウントでないと利用できませんのでご注意ください</font>
+<br />
+<br />
+「Alexa、Open Travel Japan Quiz」で起動して、外国人に人気の日本の名所について、都道府県を当てるゲームです。
+<br />
+<br />
+スキルを利用するには、 Amazonの<a href="https://skills-store.amazon.com/deeplink/dp/B07NRZ1R1V?deviceType=app&amp;share&amp;refSuffix=ss_copy">スキルページ</a> か <a href="https://alexa.amazon.com/spa/index.html#skills/dp/B07NRZ1R1V">Alexaダッシュボード</a> から有効にして下さい。</p>
 
 <h3 id="実装について"><strong>実装について</strong></h3>
 
-<p><img src="/img/design-alexa-skill-http-status-code.png" width=740 border=1 /></p>
+<p>&ldquo;Alexa Skill Blueprints&rdquo; は、予め用意されているテンプレートをベースにプライベートなスキルを作ることができる公式サービスで、現時点ではUSのみ利用可能となっていますが、先日ストアへの申請が可能になったので、今後日本でも利用可能になることを踏まえて作ってみました。</p>
 
-<p>Alexaスキル開発キャンペーンに応募するために「忠臣蔵こよみ」を横展開しただけです。テーマを変えるだけでほぼ実装はいじっていません（多少当日の時間推移はいじっていますが）ので、これもまた、それぞれの歴史の書籍読んだり調べたりというのが工数の殆どを締めていたりします（笑）
-あと「忠臣蔵こよみ」でもそうなのですが、効果音いろいろと使っています。Amazonからも公式にAlexaサウンドライブラリが用意されており、SSMLで指定するだけで簡単に使えて、かつ、華やかになりますね。効果音はおすすめです。
-<br />
-<br />
-コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。バックエンドも定番の構成です。コードはGithubで公開予定です。
-<br />
-<a href="https://github.com/kun432/alexa-skill-sekigahara-koyomi">https://github.com/kun432/alexa-skill-sekigahara-koyomi</a><br />
-<a href="https://github.com/kun432/alexa-skill-honnouji-koyomi">https://github.com/kun432/alexa-skill-honnouji-koyomi</a></p>
+<p>詳細は以下にまとめてありますので、そちらもご覧ください。</p>
+
+<ul>
+<li><a href="https://kun432.hatenablog.com/entry/alexa_skill_blueprints">Alexa Skill Blueprintsでスキルを作って申請してみた（USのみ） - kun432&rsquo;s blog</a></li>
+<li><a href="https://kun432.hatenablog.com/entry//alexa_skill_blueprints_released">Alexa Skill Blueprintsでスキルをリリースしてみた（USのみ） - kun432&rsquo;s blog</a></li>
+</ul>
+
+<p>技術的な要素は何もありませんが、こういったノンコーディングでスキルが作成できるサービスは現時点でも<a href="https://www.invocable.com/">Invocable</a>, <a href="https://getvoiceflow.com/">Voiceflow</a>, <a href="https://www.noid.ai/">NOID</a>などがあり、コードが書けなくても直感的に作れるサービスが増えてくることで、スキル開発者が増えることが期待できますし、スキルの内容によって、コードを書くかノンコーディングツールを使うか、どちらが効率的か？を選択するようなシチュエーションが出てくると思いますので、今後も注目していきたいと思います。</p>
 
 <h3 id="今後の予定"><strong>今後の予定</strong></h3>
 
 <ul>
-<li>Clova/Google Home対応</li>
+<li>クイズをもっと増やしていきたいです。</li>
 </ul>
 
 <h3 id="更新履歴"><strong>更新履歴</strong></h3>
 
 <ul>
-<li>関ヶ原こよみ v1.0 (2018/11/26)
-
-<ul>
-<li>公開</li>
-</ul></li>
-<li>本能寺こよみ v1.0 (2018/11/26)
+<li>v1.0(2019/02/15)
 
 <ul>
 <li>公開</li>
@@ -158,7 +163,7 @@ if (!doNotTrack) {
 <p>このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。</p>
 
 <div style="text-align: right;">
-2018年11月26日 制定<br />
+2019月2月16日 制定<br />
 Kuniaki Shimizu<br />
 kun432.8d1w@gmail.com<br />
 </div>

@@ -6,10 +6,26 @@
     <description>Recent content in Works on Kuniaki Shimizu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kun432.github.io/works/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Alexaスキル「Travel Japan Quiz」</title>
+      <link>https://kun432.github.io/works/alexa-travel-japan-quiz/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kun432.github.io/works/alexa-travel-japan-quiz/</guid>
+      <description>はじめに Alexaスキル「Travel Japan Quiz」のページです。
+目次  はじめに 目次 使い方 実装について 今後の予定 更新履歴 プライバシーポリシー  使い方    注意！！！ amazon.comアカウントでないと利用できませんのでご注意ください 「Alexa、Open Travel Japan Quiz」で起動して、外国人に人気の日本の名所について、都道府県を当てるゲームです。 スキルを利用するには、 Amazonのスキルページ か Alexaダッシュボード から有効にして下さい。
+実装について &amp;ldquo;Alexa Skill Blueprints&amp;rdquo; は、予め用意されているテンプレートをベースにプライベートなスキルを作ることができる公式サービスで、現時点ではUSのみ利用可能となっていますが、先日ストアへの申請が可能になったので、今後日本でも利用可能になることを踏まえて作ってみました。
+詳細は以下にまとめてありますので、そちらもご覧ください。
+ Alexa Skill Blueprintsでスキルを作って申請してみた（USのみ） - kun432&amp;rsquo;s blog Alexa Skill Blueprintsでスキルをリリースしてみた（USのみ） - kun432&amp;rsquo;s blog  技術的な要素は何もありませんが、こういったノンコーディングでスキルが作成できるサービスは現時点でもInvocable, Voiceflow, NOIDなどがあり、コードが書けなくても直感的に作れるサービスが増えてくることで、スキル開発者が増えることが期待できますし、スキルの内容によって、コードを書くかノンコーディングツールを使うか、どちらが効率的か？を選択するようなシチュエーションが出てくると思いますので、今後も注目していきたいと思います。
+今後の予定  クイズをもっと増やしていきたいです。  更新履歴  v1.0(2019/02/15)  公開   プライバシーポリシー このアプリケーションでは、ご利用になる皆様のいかなるプライバシー情報も収集、使用、共用することはありません。
+2019月2月16日 制定
+Kuniaki Shimizu</description>
+    </item>
     
     <item>
       <title>Alexaスキル「１分間キャンドル」「１分間暖炉」「１分間サンセット」</title>
@@ -35,7 +51,7 @@ https://github.com/kun432/alexa-skill-1min-sunset
       
       <guid>https://kun432.github.io/works/alexa-skill-chushingura-koyomi/</guid>
       <description> はじめに Alexaスキル「忠臣蔵こよみ」のページです。
-目次 autoauto- はじめにauto- 目次auto- 使い方auto- 実装についてauto- 今後の予定auto- 更新履歴auto- プライバシーポリシーautoauto使い方    「アレクサ、忠臣蔵こよみを開いて」で起動して、その後、「知りたい」と答えると、忠臣蔵の討ち入り日である12月15日までの日数を数えてくれます。 実装について 今回のポイントは2点です。
+目次  はじめに 目次 使い方 実装について 今後の予定 更新履歴 プライバシーポリシー  使い方    「アレクサ、忠臣蔵こよみを開いて」で起動して、その後、「知りたい」と答えると、忠臣蔵の討ち入り日である12月15日までの日数を数えてくれます。 実装について 今回のポイントは2点です。
  Echo Spotのような画面付きデバイス向けにDisplay Templateを使用し画像表示を行っています。また、画面付きデバイスの場合は、音声だけではなく、リストメニューを使ったタップによる入力も可能なので、これも実装してみました。 Alexaの声は、標準では女性の声なのですが、テーマに合わせて男性の声を使いたい、ということで、Amazon Pollyを使ってみました。SSMLだけで実装できるので非常に簡単です。あと、思いのほか、武士言葉でも普通に喋ってくれてびっくりしました（笑）  元々の音声のみのインタラクションは、これまでのGUIとは考え方が異なる難しさがありましたが、画面表示ができることにより視覚的に補完できる反面はあるものの、考慮すべきことも多くなり、違う意味での難しさもあるなと感じました。特に、
  シミュレータと実機で動きが違ったり、Echo Showの実機がなかったり、でテストが難しい。 画面付きの場合、セッションを明示的に切る必要があるが、挙動にばらつきがある。 複数のテンプレートが用意されており、かつ、同じテンプレートでもSpot/Showで見え方や画像処理が違う。  あたりはまだ手探り感があり、引き続きいろいろ試していく必要があると思っています。Echo Showも発売され、Fire TVもAlexa対応、さらにマルチモーダルな画面設計が行えるAPLなど、画面対応については非常に可能性があると思ってます。
 あと、このスキル、討ち入り当日の12/15は時間ごとに討ち入りの模様が効果音付きで説明されます。今回最も苦労したのは、それを作るために、忠臣蔵の正確な時間推移を追うために書籍漁ったり、良さげで効果音を探すことだったり、します（笑） コードは、Alexa Skills Kit SDK for Node.jsのバージョン2で書いてます。バックエンドも定番の構成です。 コードはGithubで公開予定です。 https://github.com/kun432/alexa-skill-chushingura-koyomi
