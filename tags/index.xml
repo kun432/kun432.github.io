@@ -6,22 +6,13 @@
     <description>Recent content in Tags on Kuniaki Shimizu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jul 2018 01:52:59 -0500</lastBuildDate>
     
 	<atom:link href="https://kun432.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Projects</title>
-      <link>https://kun432.github.io/tags/projects/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://kun432.github.io/tags/projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Resume</title>
+      <title>resume</title>
       <link>https://kun432.github.io/tags/resume/</link>
       <pubDate>Sat, 28 Jul 2018 01:52:59 -0500</pubDate>
       
@@ -30,11 +21,20 @@
     </item>
     
     <item>
-      <title>Vitae</title>
+      <title>vitae</title>
       <link>https://kun432.github.io/tags/vitae/</link>
       <pubDate>Sat, 28 Jul 2018 01:52:59 -0500</pubDate>
       
       <guid>https://kun432.github.io/tags/vitae/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>projects</title>
+      <link>https://kun432.github.io/tags/projects/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://kun432.github.io/tags/projects/</guid>
       <description></description>
     </item>
     
