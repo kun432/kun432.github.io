@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kuniaki Shimizu" />
+    <meta name="description" content="Kuniaki Shimizu&#39;s Portfolio">
+    <link rel="shortcut icon" type="image/x-icon" href="https://kun432.github.io/img/favicon.ico">
+    <title>Alexaスキル「雨雲マップ」</title>
+    <meta name="generator" content="Hugo 0.55.6" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://kun432.github.io/css/vitae-skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="https://kun432.github.io/css/vitae-layout.css" />
+    <link rel="stylesheet" type="text/css" href="https://kun432.github.io/css/sustain-main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-113389308-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://kun432.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="https://kun432.hatenablog.com/">BLOG</a></li>
+        
+        <li><a href="https://github.com/kun432/">REPOSITORY</a></li>
+        
+        <li><a href="/works/">WORKS</a></li>
+        
+        <li><a href="/vitae/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kun432.github.io/works/alexa-skill-raincloud-map/">Alexaスキル「雨雲マップ」</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          July 28, 2019
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<h3 id="はじめに"><strong>はじめに</strong></h3>
+
+<p>Alexaスキル「雨雲マップ」のページです。(2019/07/28申請中)</p>
+
+<p><img src="/img/alexa-skill-raincloud-map-icon.png" width=250 /></p>
+
+<p><img src=""></p>
+
+<h3 id="目次"><strong>目次</strong></h3>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#はじめに"><strong>はじめに</strong></a></li>
+<li><a href="#目次"><strong>目次</strong></a></li>
+<li><a href="#使い方"><strong>使い方</strong></a></li>
+<li><a href="#実装について"><strong>実装について</strong></a></li>
+<li><a href="#今後の予定"><strong>今後の予定</strong></a></li>
+<li><a href="#更新履歴"><strong>更新履歴</strong></a></li>
+<li><a href="#プライバシーポリシー"><strong>プライバシーポリシー</strong></a>
+
+<ul>
+<li><a href="#本サービスが取得する利用者情報と利用目的">本サービスが取得する利用者情報と利用目的</a></li>
+<li><a href="#プライバシーポリシーの変更">プライバシーポリシーの変更</a></li>
+<li><a href="#お問い合わせ窓口">お問い合わせ窓口</a></li>
+</ul></li>
+</ul>
+
+<!-- /TOC -->
+
+<h3 id="使い方"><strong>使い方</strong></h3>
+
+<p>「アレクサ、雨雲を開いて」で起動します。初回起動時のみ、Alexaデバイスの住所情報を取得し、以降の利用ではその住所情報を元に、お住いの地域の雨雲レーダー画像を表示、現在および１時間後の雨の状況をお伝えします。ディスプレイ付きデバイス（Echo Spot/Echo Show）でのみ利用可能です。
+<br />
+<br /></p>
+
+<h3 id="実装について"><strong>実装について</strong></h3>
+
+<p>プロトタイプ作成後から少し時間が空いてしまいましたが、やっと完成させることができました。今回のテーマは「VoiceflowでAPIを活用したスキル」です。
+<br />
+<br />
+同一の機能を持つスキルは他にも存在しますが、本スキルの優位性は以下の２点です。
+<br />
+<br /></p>
+
+<ul>
+<li>最初に住所を登録しておけば、毎回いちいち住所を言わなくても良い</li>
+<li>利用者ごとに異なるロケーションにあわせて最適化することにより、利用者の利便性を向上する</li>
+</ul>
+
+<p>これまで作成してきたスキルでは、基本的にすべてのユーザに対して一律の機能を提供してきましたが、よりユーザごとにカスタマイズ性をもたせたスキル開発を行いたい、ということで、今回はAlexaの所在地情報APIを使ってみました。また、画面付きデバイス向けにマップ画像を使ったシンプルなスキルを作ってみたかったということもあり、Yahoo!JAPAN様が提供されているスタティックマップAPIと郵便番号APIと組み合わせて、
+<br />
+<br /></p>
+
+<ul>
+<li>所在地情報APIで郵便番号取得</li>
+<li>郵便番号APIで緯度経度取得</li>
+<li>スタティックマップAPIで雨雲情報が付与されたマップ画像を取得</li>
+</ul>
+
+<p>という形で、一度住所を登録しさえすれば、あとは起動するだけで最短で必要な雨雲情報を取り出せるというものになっています。
+<br />
+<br />
+また、今回はスキル開発プラットフォームにVoiceflowを使っています。Voiceflowは以前から活用しており、実際に複数のシンプルなスキルをリリースしていますし、テスト的に凝ったこともやっていますが、今回は、複数の外部APIを叩いたり、アクセス権処理を追加したり、画面付きデバイス向けの画面対応など、かなりできることを盛り込んだ上で申請・公開する、というのをテーマにしていました。
+<br />
+<br />
+ノンコーディングなのでかんたんだと思われがちですが（事実シンプルなものであればかんたんです）、実際には、設計書を作って、コードで同じことをやって、その上でVoiceflowで一度プロトタイプ組んで、と実は結構時間をかけています。というのも、この手のGUIツールは、かんたんにスタートができる反面、よく考えずに進めていくと、最終的にフローがぐちゃぐちゃになってしまい、非常にメンテがしづらいものになってしまう可能性が高いためです。こういった部分は外からは見えませんが、将来的な運用・保守コストを踏まえて、少し設計段階からきちんと考えてみました。
+<br />
+<br />
+それでもコードを書くことに比べると、やはり保守の観点ではいろいろ課題は多い印象ですが、プロトタイピングやそれほど規模が大きくないものであれば、非常にスピーディーにスキルリリースまで進めれてしまう素晴らしいツールですし、このあたりで得られた知見を開発元やコミュニティに共有していくことで、Voiceflowがスキル開発初心者のみならずスキル開発経験者にも有用なツールとして日本でも普及し、Alexa開発者の裾野を広げれれば良いなと思ってます。
+<br />
+<br /></p>
+
+<h3 id="今後の予定"><strong>今後の予定</strong></h3>
+
+<ul>
+<li>未定</li>
+</ul>
+
+<h3 id="更新履歴"><strong>更新履歴</strong></h3>
+
+<ul>
+<li>v1.0(2019/07/28)
+
+<ul>
+<li>申請中</li>
+</ul></li>
+</ul>
+
+<h3 id="プライバシーポリシー"><strong>プライバシーポリシー</strong></h3>
+
+<p>kun432（以下，「私」といいます。）が提供するAlexaスキル「雨雲マップ」（以下、「本スキル」といいます。）および本スキルの利用により提供されるサービス（以下、本スキルの利用含め「本サービス」といいます。）をご利用いただく際に取得する「利用者情報」の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
+<br/>
+<br/></p>
+
+<h4 id="本サービスが取得する利用者情報と利用目的">本サービスが取得する利用者情報と利用目的</h4>
+
+<p><br/>
+本サービスでは、Alexaアプリ・Echoデバイスに登録された利用者の「住所」のうち「郵便番号」を取得し、Yahoo! JAPANが提供する以下のAPI（以下、「外部API」といいます。）に対して、取得した「郵便番号」を送信することで、利用者のお住いの地域に基づいた気象情報の提供を行います。
+<br/>
+<br/></p>
+
+<ul>
+<li>「郵便番号検索API」
+
+<ul>
+<li>郵便番号から、お住いの地域の大まかな地名および緯度経度を取得します。</li>
+</ul></li>
+<li>「Yahoo!スタティックマップAPI」および「気象情報API」
+
+<ul>
+<li>上記で取得した緯度経度から、お住いの地域の雨雲レーダー画像および降水強度情報を取得します。</li>
+</ul></li>
+</ul>
+
+<p><br/>
+本機能は、ご使用になられるAlexaアプリにて、利用者ご自身が本サービスに対して「住所」へのアクセスを許可する必要があります。これらに対して、利用者が許可しない限り、本サービスが「郵便番号」を取得することも、外部APIへ「郵便番号」を送信することもありません。また、郵便番号を元に取得した住所情報をスキル内に保存し、サービスの利用において住所情報を活用するかどうかを利用者に確認します。これに対して、利用者が同意しない限り、本サービスの利用を開始することはできません。本サービスの有効化、「住所」へのアクセス許可、ならびにスキルへの保存を許可することにより、利用者がこれらの情報の提供に同意したものとみなしますのでご留意ください。なお、これらの情報は、利用者に払い出されているユーザ識別子と紐付いていますが、スキルを無効化することによりユーザ識別子が変更されるため、取得した住所情報にアクセスすることはできなくなります。
+<br/>
+また、取得した利用者情報は、本スキルの機能を提供するために一時的に利用するにとどまり、本ポリシーに記載されている場合を除き、第三者への提供を行うことはございません。
+<br/>
+<br/></p>
+
+<h4 id="プライバシーポリシーの変更">プライバシーポリシーの変更</h4>
+
+<p><br/>
+本ポリシーは、個人情報に関して適用される日本の法令を遵守するとともに、内容を適宜見直しその改善に努めるものとして、利用者に通知することなく変更する場合があります。修正された最新のプライバシーポリシーは常に本ページにて開示されるものとします。
+<br/>
+<br/></p>
+
+<h4 id="お問い合わせ窓口">お問い合わせ窓口</h4>
+
+<p><br/>
+本ポリシーに関するお問い合わせは，下記のメールでのみお受けしております。ご了承ください。
+<br/>
+<br/>
+名前： kun432(Kuniaki Shimizu)<br/>
+Eメールアドレス：kun432.8d1w@gmail.com
+<br/>
+<br/>
+以上</p>
+
+<div style="text-align: right;">
+2019年07月28日 制定<br />
+</div>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kun432-github';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="https://github.com/anirbanmu/hugo-sustain-vitae">sustain-vitae</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://kun432.github.io/js/docs.min.js"></script>
+<script src="https://kun432.github.io/js/main.js"></script>
+
+<script src="https://kun432.github.io/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  </body>
+</html>
